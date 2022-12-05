@@ -5,11 +5,10 @@ class Server():
     def __init__(self, host, port):
         self.server = WebsocketServer(host, port)
 
-    def connected(client, server):
+    def connected(self, client, server):
         print("Conectado")
-        self.listado_clientes.pull(client)
 
-    def reciveMessage(client, server, message):
+    def reciveMessage(self, client, server, message):
         print("mensaje: "+message)
         if message == "Recibido":
             print("Todo ha salido como se esperaba")
