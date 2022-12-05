@@ -8,7 +8,7 @@ def connected(client, server):
     print("Conectado")
 
 def reciveMessage(client, server, message):
-    print(message)
+    print("mensaje: "+message)
     if message == "Recibido":
         print("Todo ha salido como se esperaba")
     else:
