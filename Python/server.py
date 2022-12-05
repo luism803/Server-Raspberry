@@ -14,10 +14,10 @@ class Server():
         if message == "Recibido":
             print("Todo ha salido como se esperaba")
         else:
-            server.send_message(client, "Mensaje recibido")
+            self.server.send_message(client, "Mensaje recibido")
     
     def run(self):
         print("Starting...")
-        server.set_fn_new_client(connected)
-        server.set_fn_message_received(reciveMessage)
-        server.run_forever()
+        self.server.set_fn_new_client(self.connected)
+        self.server.set_fn_message_received(self.reciveMessage)
+        self.server.run_forever()
