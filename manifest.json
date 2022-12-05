@@ -1,0 +1,28 @@
+{
+    "manifest_version":2,
+    "name": "Nombre",
+    "description":"Descripcion.",
+    "version": "1.5",
+    "icons":{
+        "16":"16.png",
+        "48":"48.png",
+        "128":"128.png"
+    },
+    "page_action":{
+        "default_icon":{
+            "16":"16.png",
+            "48":"48.png",
+            "128":"128.png"
+        }
+    },
+
+    "content_scripts":[
+        {
+            "matches":["https://www.google.com/"],
+            "js":["socket.js"]
+        }
+    ],
+    "permissions": [
+        "storage"
+    ]
+}
