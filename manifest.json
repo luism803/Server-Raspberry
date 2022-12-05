@@ -4,22 +4,22 @@
     "description":"Descripcion.",
     "version": "1.5",
     "icons":{
-        "16":"16.png",
-        "48":"48.png",
-        "128":"128.png"
+        "16":"Icons/16.png",
+        "48":"Icons/48.png",
+        "128":"Icons/128.png"
     },
     "page_action":{
         "default_icon":{
-            "16":"16.png",
-            "48":"48.png",
-            "128":"128.png"
+            "16":"Icons/16.png",
+            "48":"Icons/48.png",
+            "128":"Icons/128.png"
         }
     },
 
     "content_scripts":[
         {
             "matches":["https://www.google.com/"],
-            "js":["socket.js"]
+            "js":["Js/socket.js"]
         }
     ],
     "permissions": [
