@@ -1,19 +1,23 @@
 from websocket_server import WebsocketServer
 
-print("starting...")
+class Server():
 
-server = WebsocketServer("localhost", 8080)
+    def __init__(self, host, port):
+        self.server = WebsocketServer(host, port)
 
-def connected(client, server):
-    print("Conectado")
+    def connected(client, server):
+        print("Conectado")
+        self.listado_clientes.pull(client)
 
-def reciveMessage(client, server, message):
-    print("mensaje: "+message)
-    if message == "Recibido":
-        print("Todo ha salido como se esperaba")
-    else:
-        server.send_message(client, "Mensaje recibido")
-        
-server.set_fn_new_client(connected)
-server.set_fn_message_received(reciveMessage)
-server.run_forever()
+    def reciveMessage(client, server, message):
+        print("mensaje: "+message)
+        if message == "Recibido":
+            print("Todo ha salido como se esperaba")
+        else:
+            server.send_message(client, "Mensaje recibido")
+    
+    def run(self):
+        print("Starting...")
+        server.set_fn_new_client(connected)
+        server.set_fn_message_received(reciveMessage)
+        server.run_forever()
