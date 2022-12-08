@@ -13,9 +13,9 @@ class Console:
         self.asciIcon = icon
         self.on = True
 
-    def mostrarMenu(self):
+    def mostrarMenu(self, fin="\n"):
         #os.system('cls')
-        print(self.asciIcon)
+        print(self.asciIcon, end=fin)
 
     def pedirComnado(self):
         return input(">")
@@ -30,15 +30,15 @@ class Console:
             print("No existe el comando introducido")
 
     def run(self):
-        self.cls()
+        self.cls("\n")
         while self.on:
             self.ejecutarComando()
             print()
         self.on = True
 
-    def cls(self):
+    def cls(self, fin=" "):
         os.system('cls')
-        self.mostrarMenu()
+        self.mostrarMenu(fin)
 
     def help(self):
         for i in range(len(self.comandos)):

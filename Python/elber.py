@@ -1,5 +1,7 @@
 from console import Console
 from cita import Cita
+
+ascii = "███████╗██╗░░░░░██████╗░███████╗██████╗░\n██╔════╝██║░░░░░██╔══██╗██╔════╝██╔══██╗\n█████╗░░██║░░░░░██████╦╝█████╗░░██████╔╝\n██╔══╝░░██║░░░░░██╔══██╗██╔══╝░░██╔══██╗\n███████╗███████╗██████╦╝███████╗██║░░██║\n╚══════╝╚══════╝╚═════╝░╚══════╝╚═╝░░╚═╝"
 cita = Cita()
-Consola = Console(["pedir"], [cita.run], "ELBER")
+Consola = Console(["pedir"], [cita.run], ascii)
 Consola.run()
