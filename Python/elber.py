@@ -1,3 +1,5 @@
 from console import Console
-Consola = Console()
+from cita import Cita
+cita = Cita()
+Consola = Console(["pedir"], [cita.run], "ELBER")
 Consola.run()

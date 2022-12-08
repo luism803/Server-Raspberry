@@ -1,32 +1,21 @@
-from server import Server
+import os
 
 class Console:
-    def __init__(self):
-        self.comandos = ["hola", "start", "help", "exit"]
-        self.funciones = [self.saludar, self.start, self.help, self.exit]
+    def __init__(self, comandos, funciones, icon):
+        comandos.append("cls")
+        comandos.append("help")
+        comandos.append("exit")
+        funciones.append(self.cls)
+        funciones.append(self.help)
+        funciones.append(self.exit)
+        self.comandos = comandos
+        self.funciones = funciones
+        self.asciIcon = icon
         self.on = True
 
     def mostrarMenu(self):
-        print("    .-.                     .-. ")
-        print(" .--' /                     \ '--. ")
-        print(" '--. \       _______       / .--' ")
-        print("     \ \   .-\"       \"-.   / / ")
-        print("      \ \ /             \ / / ")
-        print("       \ /               \ / ")
-        print("        \|   .--. .--.   |/ ")
-        print("         | )/   | |   \( | ")
-        print("         |/ \__/   \__/ \| ")
-        print("         /      /^\      \ ")
-        print("         \__    '='    __/ ")
-        print("           |\         /| ")
-        print("           |\\'\"VUUUV\"'/| ")
-        print("           \ `\"\"\"\"\"\"\"` / ")
-        print("            `-._____.-' ")
-        print("              / / \ \ ")
-        print("             / /   \ \ ")
-        print("            / /     \ \ ")
-        print("         ,-' (       ) `-,")
-        print("         `-'._)     (_.'-` ")
+        #os.system('cls')
+        print(self.asciIcon)
 
     def pedirComnado(self):
         return input(">")
@@ -35,25 +24,26 @@ class Console:
         comando = self.pedirComnado()
         if comando in self.comandos:
             index = self.comandos.index(comando)
-            self.funciones[index]()
+            if(self.funciones[index]()==0):
+                self.cls()
         else:
             print("No existe el comando introducido")
 
-    def saludar(self):
-        print("Hola perro")
-
-    def help(self):
-        print("no hay ayuda que valga")
-
     def run(self):
-        self.mostrarMenu()
+        self.cls()
         while self.on:
             self.ejecutarComando()
             print()
+        self.on = True
 
-    def start(self):
-        self.socket = Server("localhost" , 8080)
-        self.socket.run()
+    def cls(self):
+        os.system('cls')
+        self.mostrarMenu()
+
+    def help(self):
+        for i in range(len(self.comandos)):
+            print()
+            print("-"+self.comandos[i])
 
     def exit(self):
         self.on = False
