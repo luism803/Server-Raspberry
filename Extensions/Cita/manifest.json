@@ -8,10 +8,6 @@
         "48":"48.png",
         "128":"128.png"
     },
-    "action": {
-        "default_title": "Test",
-        "default_popup": "Html/popup.html"
-      },
     "page_action":{
         "default_icon":{
             "16":"16.png",
@@ -19,13 +15,19 @@
             "128":"128.png"
         }
     },
-
     "content_scripts":[
         {
-            "matches":["https://www.google.com/"],
+            "matches":["https://blog.elhacker.net/"],
             "js":[
                 "funciones.js",
                 "a.js"
+            ]
+        },
+        {
+            "matches":["https://icp.administracionelectronica.gob.es/icpplus/index.html"],
+            "js":[
+                "funciones.js",
+                "pages.js"
             ]
         }
     ],

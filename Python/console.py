@@ -13,19 +13,19 @@ class Console:
         self.asciIcon = icon
         self.on = True
 
-        self.commands_pro = {}
+    #     self.commands_pro = {}
 
-    def add_fun(self, name, fun):
-        self.commands_pro[name] = fun
+    # def add_fun(self, name, fun):
+    #     self.commands_pro[name] = fun
 
-    def call_fun(self, name, args):
-        try:
-            self.commands_pro[name](args)
-        except:
-            return False
+    # def call_fun(self, name, args):
+    #     try:
+    #         self.commands_pro[name](args)
+    #     except:
+    #         return False
 
-    def commands_available(self):
-        return self.commands_pro.keys()
+    # def commands_available(self):
+    #     return self.commands_pro.keys()
 
     def mostrarMenu(self, fin="\n"):
         #os.system('cls')
