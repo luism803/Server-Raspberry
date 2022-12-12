@@ -7,6 +7,7 @@ ws.addEventListener("open", e => {
 
 ws.addEventListener("message", message => {
     var data = message.data;
-    console.log(data);
+    cliente = JSON.parse(data)
+    console.log(cliente.name);
     ws.send("Recibido");
 });

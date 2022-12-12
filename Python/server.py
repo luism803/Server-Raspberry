@@ -1,4 +1,5 @@
 from websocket_server import WebsocketServer
+import json
 
 class Server():
 
@@ -13,7 +14,15 @@ class Server():
         if message == "Recibido":
             print("Todo ha salido como se esperaba")
         else:
-            self.server.send_message(client, "Mensaje recibido")
+            # a Python object (dict):
+            x = {
+            "name": "John",
+            "age": 30,
+            "city": "New York"
+            }
+            # convert into JSON:
+            y = json.dumps(x)
+            self.server.send_message(client, y)
     
     def run(self):
         print("Starting...")

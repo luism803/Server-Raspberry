@@ -4,30 +4,58 @@
     "description":"Descripcion.",
     "version": "1.5",
     "icons":{
-        "16":"16.png",
-        "48":"48.png",
-        "128":"128.png"
+        "16":"Icons/16.png",
+        "48":"Icons/48.png",
+        "128":"Icons/128.png"
     },
     "page_action":{
         "default_icon":{
-            "16":"16.png",
-            "48":"48.png",
-            "128":"128.png"
+            "16":"Icons/16.png",
+            "48":"Icons/48.png",
+            "128":"Icons/128.png"
         }
     },
     "content_scripts":[
         {
-            "matches":["https://blog.elhacker.net/"],
+            "matches":["https://www.citapreviadnie.es/citaPreviaDni/InicioPerdida.action"],
             "js":[
-                "funciones.js",
-                "a.js"
+                "Js/functions.js",
+                "Js/a.js"
             ]
         },
         {
             "matches":["https://icp.administracionelectronica.gob.es/icpplus/index.html"],
             "js":[
-                "funciones.js",
-                "pages.js"
+                "Js/functions.js",
+                "Js/Pages/first.js"
+            ]
+        },
+        {
+            "matches":["https://icp.administracionelectronica.gob.es/icpco/citar*"],
+            "js":[
+                "Js/functions.js",
+                "Js/Pages/second.js"
+            ]
+        },
+        {
+            "matches":["https://icp.administracionelectronica.gob.es/icpco/acInfo*"],
+            "js":[
+                "Js/functions.js",
+                "Js/Pages/third.js"
+            ]
+        },
+        {
+            "matches":["https://icp.administracionelectronica.gob.es/icpco/acEntrada"],
+            "js":[
+                "Js/functions.js",
+                "Js/Pages/fourth.js"
+            ]
+        },
+        {
+            "matches":["https://icp.administracionelectronica.gob.es/icpco/acValidarEntrada"],
+            "js":[
+                "Js/functions.js",
+                "Js/Pages/fifth.js"
             ]
         }
     ],
